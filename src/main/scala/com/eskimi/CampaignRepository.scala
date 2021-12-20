@@ -2,7 +2,8 @@ package com.eskimi
 
 class CampaignRepository(campaigns: Seq[Campaign]) {
 
-  
+  def matchCampaign(bidRequest: BidRequest): Option[BidResponse] =
+    None
 }
 
 object CampaignRepository {

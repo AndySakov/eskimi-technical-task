@@ -81,6 +81,7 @@ object CampaignRegistry {
 
   private def registry(campaigns: Seq[Campaign]): Behavior[Query] =
     Behaviors.receiveMessage { case RegistryQuery(bidRequest, replyTo) =>
+      replyTo ! campaignRepo.matchCampaign(bidRequest)
       Behaviors.same
     }
 }
