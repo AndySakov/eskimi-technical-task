@@ -1,0 +1,11 @@
+*.class
+.idea
+target/
+.bloop/
+/.bsp/
+.metals/
+metals.sbt
+.scalafmt.conf
+/.vscode/
+project/target/
+project/project/
