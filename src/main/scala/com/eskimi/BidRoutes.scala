@@ -10,6 +10,7 @@ import akka.actor.typed.ActorRef
 import akka.actor.typed.ActorSystem
 import akka.actor.typed.scaladsl.AskPattern._
 import akka.util.Timeout
+import JsonFormats._
 
 class BidRoutes(campaignRegistry: ActorRef[Query])(implicit
     val system: ActorSystem[_]
@@ -24,7 +25,16 @@ class BidRoutes(campaignRegistry: ActorRef[Query])(implicit
     campaignRegistry.ask(RegistryQuery(bidRequest, _))
 
   val bidRoutes: Route =
-    get {
-      complete("Hello!")
+    post {
+      path("bid") {
+        entity(as[BidRequest]) { bidRequest =>
+          onSuccess(bid(bidRequest)) { response =>
+            response match {
+              case Some(bidResponse) => complete(bidResponse)
+              case None              => complete((StatusCodes.NoContent, "{}"))
+            }
+          }
+        }
+      }
     }
 }
