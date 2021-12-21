@@ -33,6 +33,10 @@ This pings the server to check if it's up
 
 Object definitions can be found in the `com.eskimi.api` package object
 
+## Solutions Report
+
+You can view the solutions report [here](https://github.com/AndySakov/eskimi-technical-task/tree/main/src/main/scala/com/eskimi/api/SolutionReport.md)
+
 ## Run Locally
 
 Clone the project
