@@ -8,7 +8,6 @@ import akka.actor.typed.scaladsl.Behaviors
 import scala.collection.immutable
 
 object CampaignRegistry {
-  
   def apply(): Behavior[Query] = registry(List.empty)
 
   private def registry(records: List[Campaign]): Behavior[Query] =
@@ -18,8 +17,8 @@ object CampaignRegistry {
 
         replyTo ! bidProcessor.processBid(bidRequest)
         Behaviors.same
-      
-      case RegistryUpdate(newCampaigns) => 
+
+      case RegistryUpdate(newCampaigns) =>
         registry(records ++ newCampaigns)
     }
 }

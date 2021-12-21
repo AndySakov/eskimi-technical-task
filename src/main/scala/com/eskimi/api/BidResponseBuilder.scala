@@ -43,12 +43,12 @@ object BidResponseBuilder {
       // In case we get just one matching campaign
       case x: List[Campaign] if x.length == 1 =>
         fromCampaign(x.head)
-      
+
       // In case we get more than one matching campaign
       case x: List[Campaign] if x.nonEmpty =>
         val randCamp = campaigns(Random.nextInt(x.length - 1))
         fromCampaign(randCamp)
-      
+
       // Every other possibility
       case _ => None
     }

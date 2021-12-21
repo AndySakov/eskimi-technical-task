@@ -9,7 +9,7 @@ package object api {
       bidRequest: BidRequest,
       replyTo: ActorRef[Option[BidResponse]],
     ) extends Query
-  
+
   final case class RegistryUpdate(newCampaigns: List[Campaign]) extends Query
   final case class Campaign(
       id: Int,
@@ -55,5 +55,5 @@ package object api {
       banner: Option[Banner],
     )
 
-    final case class EmptyRequest()
+  final case class EmptyRequest()
 }

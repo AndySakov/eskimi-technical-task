@@ -1,26 +1,24 @@
 package com.eskimi
 
-import akka.actor.typed.ActorSystem
 import akka.actor.typed.scaladsl.Behaviors
-import akka.http.scaladsl.Http
-import akka.http.scaladsl.server.Route
+import akka.http.scaladsl.{ Http, server }
 
-import scala.util.Failure
-import scala.util.Success
+import scala.util.{ Failure, Success }
 import scala.io.StdIn._
 
 import api.CampaignRegistry
 import akka.util.Timeout
-import akka.actor.typed.Scheduler
-import akka.http.scaladsl.server.RejectionHandler
-import akka.http.scaladsl.server.RequestEntityExpectedRejection
-import akka.http.scaladsl.model.HttpResponse
-import akka.http.scaladsl.model.StatusCodes
+import akka.actor.typed.{ Scheduler, ActorSystem }
+import server.{
+  RejectionHandler,
+  RequestEntityExpectedRejection,
+  Route,
+  MalformedRequestContentRejection,
+}
+import akka.http.scaladsl.model.{ HttpResponse, StatusCodes }
 import akka.http.scaladsl.server.Directives._
-import akka.http.scaladsl.server.MalformedRequestContentRejection
 
 object BiddingAgentSystem extends App {
-
   val rootBehavior = Behaviors.setup[Nothing] { context =>
     val campaignRegistryActor =
       context.spawn(CampaignRegistry(), "CampaignRegistryActor")

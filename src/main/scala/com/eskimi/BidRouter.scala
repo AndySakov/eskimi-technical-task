@@ -9,11 +9,10 @@ import akka.util.Timeout
 import com.eskimi.api.JsonFormats._
 import com.eskimi.api._
 
+import akka.http.scaladsl.marshallers.sprayjson.SprayJsonSupport._
 import scala.concurrent.Future
 
 object BidRouter {
-  import akka.http.scaladsl.marshallers.sprayjson.SprayJsonSupport._
-
   def bid(
       bidRequest: BidRequest,
       campaignRegistry: ActorRef[Query],

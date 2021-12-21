@@ -54,7 +54,7 @@ class BidProcessor(campaigns: List[Campaign]) {
     )(implicit
       bidRequest: BidRequest
     ): Boolean =
-      // Run the validation only if there are targets to filter
+    // Run the validation only if there are targets to filter
     camp.targeting.targetedSiteIds.exists(_ == bidRequest.site.id)
 
   private def bannerFilter(
