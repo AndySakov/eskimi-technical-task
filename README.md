@@ -7,7 +7,7 @@ A demo Bidding System by Obafemi Teminife
 
 ## API Reference
 
-### Get all items
+### Ping the server
 
 ```http
   GET /ping
@@ -15,7 +15,7 @@ A demo Bidding System by Obafemi Teminife
 
 This pings the server to check if it's up
 
-### Get item
+### Post a bid request
 
 ```http
   POST /bid
@@ -28,6 +28,8 @@ This pings the server to check if it's up
 | `site`      | `object` | **Required**. Details via a Site object about the publisher’s website.|
 | `user`      | `object` | **Recommended**. Details via a User object about the human user of the device; the advertising audience.|
 | `device`      | `object` | **Recommended**. Details via a Device object about the user’s device to which the impression will be delivered.|
+
+The body data is to be in json format
 
 ## Object Definitions
 
