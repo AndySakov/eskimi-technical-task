@@ -8,10 +8,14 @@ jobs:
     name: codacy-coverage-reporter
     steps:
       - uses: actions/checkout@v2
+      - name: SBT action test
+        uses: lokkju/github-action-sbt@master
+        with: 
+          commands: clean coverage test coverageReport
       - name: Run codacy-coverage-reporter
         uses: codacy/codacy-coverage-reporter-action@v1
         with:
           project-token: ${{ secrets.CODACY_PROJECT_TOKEN }}
           # or
           # api-token: ${{ secrets.CODACY_API_TOKEN }}
-          coverage-reports: cobertura.xml
+          coverage-reports: target/tmp/coverage-report/cobertura.xml
