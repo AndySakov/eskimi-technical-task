@@ -19,4 +19,5 @@ lazy val root = (project in file(".")).settings(
     "com.typesafe.akka" %% "akka-actor-testkit-typed" % akkaVersion % Test,
     "org.scalatest" %% "scalatest" % "3.1.4" % Test,
   ),
+  coverageDataDir := target.value / "tmp"
 )
