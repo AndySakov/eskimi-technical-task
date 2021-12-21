@@ -1,0 +1,2 @@
+# eskimi-technical-task
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/71502e770eb141e5a2e06c2dfd6e648e)](https://app.codacy.com/gh/AndySakov/eskimi-technical-task?utm_source=github.com&utm_medium=referral&utm_content=AndySakov/eskimi-technical-task&utm_campaign=Badge_Grade_Settings)
