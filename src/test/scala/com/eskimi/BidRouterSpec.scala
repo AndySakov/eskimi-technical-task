@@ -15,13 +15,12 @@ import scala.concurrent.duration._
 import akka.http.scaladsl.server.{ Route, MethodRejection, MalformedRequestContentRejection }
 import akka.http.scaladsl.marshalling.Marshal
 import akka.http.scaladsl.marshallers.sprayjson.SprayJsonSupport
-import spray.json.DefaultJsonProtocol
+import spray.json.{DefaultJsonProtocol, DeserializationException}
 import akka.http.scaladsl.model._
 import com.eskimi.api._
 import com.eskimi.api.JsonFormats._
 import scala.concurrent.Await
 import scala.language.postfixOps
-import spray.json.DeserializationException
 import akka.actor.typed.scaladsl.adapter._
 
 class BidRouterSpec

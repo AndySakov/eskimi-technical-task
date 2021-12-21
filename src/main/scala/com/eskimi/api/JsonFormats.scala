@@ -1,17 +1,7 @@
 package com.eskimi.api
 
-//#json-formats
-import spray.json.DefaultJsonProtocol
-
+import spray.json.DefaultJsonProtocol._
 object JsonFormats {
-  // import the default encoders for primitive types (Int, String, Lists etc)
-  import DefaultJsonProtocol._
-
-  // implicit val userJsonFormat = jsonFormat3(User)
-  // implicit val usersJsonFormat = jsonFormat1(Users)
-
-  // implicit val actionPerformedJsonFormat = jsonFormat1(ActionPerformed)
-
   implicit val bannerJsonFormat = jsonFormat4(Banner)
   implicit val targetingJsonFormat = jsonFormat1(Targeting)
   implicit val siteJsonFormat = jsonFormat2(Site)
@@ -24,4 +14,3 @@ object JsonFormats {
   implicit val bidResponseJsonFormat = jsonFormat5(BidResponse)
   implicit val emptyRequestJsonFormat = jsonFormat0(EmptyRequest)
 }
-//#json-formats

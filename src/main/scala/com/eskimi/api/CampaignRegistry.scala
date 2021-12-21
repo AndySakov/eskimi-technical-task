@@ -2,8 +2,7 @@ package com.eskimi.api
 
 import scala.util.Random
 
-import akka.actor.typed.ActorRef
-import akka.actor.typed.Behavior
+import akka.actor.typed.{ActorRef, Behavior}
 import akka.actor.typed.scaladsl.Behaviors
 import scala.collection.immutable
 
