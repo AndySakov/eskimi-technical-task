@@ -1,6 +1,4 @@
-package com.eskimi
-
-import com.eskimi.CampaignRegistry._
+package com.eskimi.api
 
 //#json-formats
 import spray.json.DefaultJsonProtocol
@@ -24,5 +22,6 @@ object JsonFormats {
   implicit val impressionJsonFormat = jsonFormat8(Impression)
   implicit val bidRequestJsonFormat = jsonFormat5(BidRequest)
   implicit val bidResponseJsonFormat = jsonFormat5(BidResponse)
+  implicit val emptyRequestJsonFormat = jsonFormat0(EmptyRequest)
 }
 //#json-formats
