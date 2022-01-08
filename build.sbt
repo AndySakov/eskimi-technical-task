@@ -19,6 +19,6 @@ lazy val root = (project in file(".")).settings(
     "com.typesafe.akka" %% "akka-actor-testkit-typed" % akkaVersion % Test,
     "org.scalatest" %% "scalatest" % "3.1.4" % Test,
   ),
-  mainClass in Compile := Some("com.eskimi.BiddingAgentSystem"),
+  Compile / mainClass := Some("com.eskimi.BiddingAgentSystem"),
   coverageDataDir := target.value / "tmp"
 ).enablePlugins(JavaAppPackaging)
