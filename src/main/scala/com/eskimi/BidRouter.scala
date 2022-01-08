@@ -37,15 +37,10 @@ object BidRouter {
           }
         }
       }
-    }
-  def pingTest(
-    )(implicit
-      scheduler: Scheduler,
-      timeout: Timeout,
-    ): Route =
-    get {
-      path("ping") {
-        complete("Service is up and running!")
+    } ~
+      get {
+        path("ping") {
+          complete("Service is up and running!")
+        }
       }
-    }
 }

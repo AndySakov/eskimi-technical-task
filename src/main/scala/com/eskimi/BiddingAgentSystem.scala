@@ -51,10 +51,10 @@ object BiddingAgentSystem extends App {
         system.terminate()
     }
 
-    readLine
-    futureBinding
-      .flatMap(_.unbind())
-      .onComplete(_ => system.terminate())
+    // readLine
+    // futureBinding
+    //   .flatMap(_.unbind())
+    //   .onComplete(_ => system.terminate())
   }
   val system =
     ActorSystem[Nothing](rootBehavior, "BiddingSystem")
