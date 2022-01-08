@@ -6,6 +6,8 @@ target/
 .metals/
 metals.sbt
 .scalafmt.conf
+.env
+.sbtopts
 /.vscode/
 project/target/
 project/project/
